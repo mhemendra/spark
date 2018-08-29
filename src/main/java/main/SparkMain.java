@@ -1,10 +1,10 @@
 package main;
-import spark.StockMaxClosingPerStock;
+import spark.SparkCSV;
 
 public class SparkMain {
 
 	public static void main(String[] args) {
-		StockMaxClosingPerStock.maxClosingPerYear();
+		SparkCSV.readCSV();
 	}
 
 }
