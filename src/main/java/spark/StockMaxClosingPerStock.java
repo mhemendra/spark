@@ -1,6 +1,7 @@
 package spark;
 
 import java.util.Arrays;
+
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -14,6 +15,7 @@ public class StockMaxClosingPerStock {
 		JavaSparkContext context = new JavaSparkContext(conf);
 		try {
 			JavaPairRDD<String, String> javaFileRDD = context.wholeTextFiles("D:/BigData/Data/*");
+
 			JavaPairRDD<String, String> javaPairRDD = javaFileRDD.flatMapToPair(line -> Arrays
 					.asList(line._2.split("[\\r\\n]+")).stream()
 					.map(word -> new Tuple2<String, String>(
